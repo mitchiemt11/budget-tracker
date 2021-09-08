@@ -1,4 +1,5 @@
-import { createContext, useReducer } from "react";
+import React, { createContext, useReducer } from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 // 5. The reduceer - this is used to update the state, based on the action
 const AppReducer = (state, action) => {
@@ -15,6 +16,11 @@ const AppReducer = (state, action) => {
                (expense) => expense.id !== action.payload
             )
         };
+        case 'SET_BUDGET':
+        return {
+            ...state,
+            budget: action.payload,
+        };
         default:
             return state;
     }
@@ -24,8 +30,11 @@ const AppReducer = (state, action) => {
 const initialState = {
     budget: 2000,
     expenses: [
-        {id: 12, name: "shopping", cost: 50},
-        {id: 13, name: "holiday", cost: 150},
+        { id: uuidv4(), name: 'Shopping', cost: 50 },
+		{ id: uuidv4(), name: 'Holiday', cost: 300 },
+		{ id: uuidv4(), name: 'Transportation', cost: 70 },
+		{ id: uuidv4(), name: 'Fuel', cost: 40 },
+		{ id: uuidv4(), name: 'Child Care', cost: 500 },
     ]
 }
 

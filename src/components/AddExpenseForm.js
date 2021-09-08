@@ -21,12 +21,15 @@ const AddExpenseForm = () => {
             type: 'ADD_EXPENSE',
             payload: expense,
         })
+
+        setName('');
+		setCost('');
     }
 
     return (
         <form onSubmit={onSubmit}>
             <div className="row">
-                <div className="col-sm">
+                <div className="col-sm col-lg-4">
                     <label for="name">Name</label>
                     <input 
                        type="text" 
@@ -37,7 +40,7 @@ const AddExpenseForm = () => {
                        required="required"
                     />
                 </div>
-                <div className="col-sm">
+                <div className="col-sm col-lg-4">
                     <label for="cost">Cost</label>
                     <input 
                        type="text" 
@@ -48,10 +51,12 @@ const AddExpenseForm = () => {
                        required="required"
                     />
                 </div>
+                <div className="row mt-3">
                 <div className="col-sm">
                     <button type="submit" className="btn btn-primary">
                         Save
                     </button>
+                </div>
                 </div>
             </div>
         </form>
