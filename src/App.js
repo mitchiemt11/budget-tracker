@@ -1,12 +1,13 @@
 
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Budget from './components/Budget';
-import Remaining from './components/Remaining';
-import ExpenseTotal from './components/ExpenseTotal';
-import ExpenseList from './components/ExpenseList';
-import AddExpenseForm from './components/AddExpenseForm';
+
 import { AppProvider } from './context/AppContext';
+import AddExpenseForm from './components/AddExpenseForm';
+import Budget from './components/Budget';
+import ExpenseList from './components/ExpenseList';
+import ExpenseTotal from './components/ExpenseTotal';
+import Remaining from './components/Remaining';
 
 function App() {
   return (
