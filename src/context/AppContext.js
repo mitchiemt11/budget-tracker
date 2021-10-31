@@ -47,7 +47,7 @@ export const AppProvider = (props) => {
     // 4. Sets up the app state. takes a reducer, and an initial state
     const [state, dispatch] = useReducer(AppReducer, initialState);
 
-    // 5. Returns our context. Pass in the values we want to expose
+    // 5. Returns context. Pass in the values to be shown in AppContext.
     return(
         <AppContext.Provider
            value={{
